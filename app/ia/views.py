@@ -1,7 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
-# proyecto_asistencia/ia/views.py
+# ia/views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -17,19 +14,25 @@ class AgruparAlumnosView(APIView):
         alumnos = Alumno.objects.all()
         data = []
         for alumno in alumnos:
-            # Ejemplo de cómo obtener las notas y promediarlas
-            notas = Nota.objects.filter(alumno=alumno)
-            promedio_total = np.mean([nota.nota for nota in notas]) if notas else 0
+            # Obtener las notas del alumno para el trimestre
+            # Excluimos la autoevaluación, ya que no está disponible
+            notas_alumno = Nota.objects.filter(id_alumno=alumno)
             
-            # Aquí pueden añadir más características (features) como asistencia
-            # Por ahora, solo usaremos el promedio de notas como ejemplo
-            data.append([promedio_total])
+            # Calcular el promedio de las dimensiones relevantes
+            ser_promedio = np.mean([nota.ser for nota in notas_alumno if nota.ser is not None]) if notas_alumno else 0
+            saber_promedio = np.mean([nota.saber for nota in notas_alumno if nota.saber is not None]) if notas_alumno else 0
+            hacer_promedio = np.mean([nota.hacer for nota in notas_alumno if nota.hacer is not None]) if notas_alumno else 0
+            
+            # Crear un vector de características para K-Means
+            data.append([ser_promedio, saber_promedio, hacer_promedio])
         
         # 2. Convertir los datos a un array de NumPy
+        if not data:
+            return Response({'error': 'No hay datos de alumnos para agrupar.'}, status=status.HTTP_404_NOT_FOUND)
+            
         X = np.array(data)
 
         # 3. Implementar y entrenar el modelo K-Means
-        # Se asume que k=3, pero puede ser dinámico
         kmeans_model = KMeans(n_clusters=3, random_state=0, n_init='auto')
         kmeans_model.fit(X)
         

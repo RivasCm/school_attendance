@@ -2,44 +2,48 @@
 from django.db import models
 from personal.models import Alumno
 from school.models import Materia
-from datetime import date
+from personal.models import Profesor
 
-class Dimension(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.TextField(null=True, blank=True)
-
-    def __str__(self):
-        return self.nombre
 
 class Nota(models.Model):
-    TIPO_EVALUACION_CHOICES = [
-        ('Examen', 'Examen'),
-        ('Quiz', 'Quiz'),
-        ('Tarea', 'Tarea'),
-        ('Proyecto', 'Proyecto'),
-        ('Participacion', 'Participacion'),
-        ('Asistencia', 'Asistencia'),
-    ]
-    ASISTENCIA_CHOICES = [
-        ('Presente', 'Presente'),
-        ('Ausente', 'Ausente'),
-        ('Tardanza', 'Tardanza'),
-        ('Justificado', 'Justificado'),
-    ]
-
-    id_nota = models.AutoField(primary_key=True)
     id_alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
     id_materia = models.ForeignKey(Materia, on_delete=models.CASCADE)
-    tipo_evaluacion = models.CharField(max_length=50, choices=TIPO_EVALUACION_CHOICES, null=True)
-    evaluacion = models.CharField(max_length=100, null=True, blank=True)
-    nota = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    asistencia = models.CharField(max_length=50, choices=ASISTENCIA_CHOICES, null=True)
-    fecha_evaluacion = models.DateField(default=date.today)
-    observaciones = models.TextField(null=True, blank=True)
-
-class ProfesorMateriaCurso(models.Model): # Se agregó esta tabla para la relación de 3
-    id_pmc = models.AutoField(primary_key=True)
-    id_profesor = models.ForeignKey('personal.Profesor', on_delete=models.CASCADE)
-    id_materia = models.ForeignKey(Materia, on_delete=models.CASCADE)
+    ser = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    saber = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    hacer = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    decidir = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    calificacion_trimestral = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    observaciones = models.TextField(blank=True, null=True)
+    
     class Meta:
-        unique_together = ('id_profesor', 'id_materia')
+        verbose_name_plural = "Notas"
+        unique_together = ('id_alumno', 'id_materia')
+
+    def __str__(self):
+        return f"{self.id_alumno.nombre} - {self.id_materia.nombre_materia}"
+
+
+class Asistencia(models.Model):
+    id_alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+    id_materia = models.ForeignKey(Materia, on_delete=models.CASCADE)
+    fecha_clase = models.DateField()
+    estado = models.CharField(max_length=1, choices=[
+        ('A', 'Asistencia'),
+        ('F', 'Falta'),
+        ('R', 'Retraso'),
+        ('L', 'Licencia'),
+    ])
+
+    class Meta:
+        verbose_name_plural = "Asistencias"
+        unique_together = ('id_alumno', 'id_materia', 'fecha_clase')
+
+    def __str__(self):
+        return f"{self.id_alumno.nombre} - {self.fecha_clase} - {self.estado}"
+
+class ProfesorMateriaCurso(models.Model):
+    id_profesor = models.ForeignKey(Profesor, on_delete=models.CASCADE)
+    id_materia = models.ForeignKey(Materia, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.id_profesor.nombre} - {self.id_materia.nombre_materia}'

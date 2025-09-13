@@ -1,0 +1,533 @@
+{
+  "especialidades": [
+    {
+      "nombre_especialidad": "BTH DISEÑO GRÁFICO"
+    }
+  ],
+  "cursos": [
+    {
+      "nombre_curso": "5to de Secundaria B"
+    }
+  ],
+  "profesores": [
+    {
+      "nombre": "MARIBEL",
+      "apellido": "RIVAS CAMACHO",
+      "especialidad_nombre": "BTH DISEÑO GRÁFICO"
+    }
+  ],
+  "materias": [
+    {
+      "nombre_materia": "Artes Gráficas",
+      "curso_nombre": "5to de Secundaria B"
+    }
+  ],
+  "alumnos": [
+    {
+      "nombre": "AGUILAR ROMERO",
+      "apellido": "MATEO",
+      "direccion": "Z.BERMUDEZ AV. JUAN ROCHA",
+      "telefono": "76366854"
+    },
+    {
+      "nombre": "AMADOR CASTEDO",
+      "apellido": "EMANUEL",
+      "direccion": "D.V. LA GUARDI KM 6 C. LA SELVA",
+      "telefono": "75510505"
+    },
+    {
+      "nombre": "ARGANI QUISPE",
+      "apellido": "LEONARDO SAMUEL",
+      "direccion": "No especificado",
+      "telefono": "75078726"
+    },
+    {
+      "nombre": "CAIHUARA GONZALES",
+      "apellido": "ANDERLIN",
+      "direccion": "B. LOS LOTES CALLE LA PAZ",
+      "telefono": "78546123"
+    },
+    {
+      "nombre": "CHILO MOLINA",
+      "apellido": "ARIANNA",
+      "direccion": "B. 24 DE SEPT. NORTE",
+      "telefono": "67761048"
+    },
+    {
+      "nombre": "CHOQUE MASAI",
+      "apellido": "MAYCOL",
+      "direccion": "B. 24 DE SEPT. CALLE 4",
+      "telefono": "74621040"
+    },
+    {
+      "nombre": "CHOQUE MITHA",
+      "apellido": "WILFREDO",
+      "direccion": "AV. OVIDIO BARBERY",
+      "telefono": "69226893"
+    },
+    {
+      "nombre": "COIMBRA VACA",
+      "apellido": "ARACELY",
+      "direccion": "UV 175 B VILLA NUEVA",
+      "telefono": "75647563"
+    },
+    {
+      "nombre": "CORONADO CORONADO",
+      "apellido": "JOSE SHAID",
+      "direccion": "B. JARDINES DEL NORTE",
+      "telefono": "69084807"
+    },
+    {
+      "nombre": "DURAN VACA",
+      "apellido": "SANTIAGO NICOLAS",
+      "direccion": "Z. NORTE",
+      "telefono": "75549072"
+    },
+    {
+      "nombre": "ESCALANTE AGUILERA",
+      "apellido": "CAMILA FERNANDA",
+      "direccion": "B. 4 DE NOVIEMBRE",
+      "telefono": "70487367"
+    },
+    {
+      "nombre": "ESPINOZA VIRACOCHA",
+      "apellido": "VALERIA",
+      "direccion": "Z. NORTE C/5 NRO 4567",
+      "telefono": "75646193"
+    },
+    {
+      "nombre": "FERNANDEZ MUÑOZ",
+      "apellido": "ELIANA MICHELLE",
+      "direccion": "AV. VILLA 1ro DE MAYO",
+      "telefono": "69145892"
+    },
+    {
+      "nombre": "FLORES ALEGRE",
+      "apellido": "OLIVER JUNIOR",
+      "direccion": "B. HAMACAS",
+      "telefono": "75654312"
+    },
+    {
+      "nombre": "FLORES DORADO",
+      "apellido": "HENRRY DAVID",
+      "direccion": "AV. GRAL. LOPEZ",
+      "telefono": "75378840"
+    },
+    {
+      "nombre": "FUENTES CALERO",
+      "apellido": "JOSE MIGUEL",
+      "direccion": "B. LOS PINES",
+      "telefono": "78546123"
+    },
+    {
+      "nombre": "HEREDIA SANTOS",
+      "apellido": "SANDRA NOELIA",
+      "direccion": "Z. OESTE",
+      "telefono": "67761048"
+    },
+    {
+      "nombre": "JUSTINIANO MOLINA",
+      "apellido": "YUHEL JADTNEL",
+      "direccion": "B. NORTE",
+      "telefono": "75647563"
+    },
+    {
+      "nombre": "LABARDEN SEGUNDO",
+      "apellido": "JUAN HUGO",
+      "direccion": "B. LILAS",
+      "telefono": "75378840"
+    },
+    {
+      "nombre": "LAIME MAMANI",
+      "apellido": "YEMILI",
+      "direccion": "UV 175 B VILLA NUEVA",
+      "telefono": "75647563"
+    },
+    {
+      "nombre": "MOLINA GRANDE",
+      "apellido": "FLOR DE LIZ",
+      "direccion": "AV. OVIDIO BARBERY",
+      "telefono": "69226893"
+    },
+    {
+      "nombre": "MONTAÑO CLAURE",
+      "apellido": "NAYELY",
+      "direccion": "Z. NORTE C/5 NRO 4567",
+      "telefono": "75646193"
+    },
+    {
+      "nombre": "NAVIA MARQUEZ",
+      "apellido": "KENNY",
+      "direccion": "B. 4 DE NOVIEMBRE",
+      "telefono": "70487367"
+    },
+    {
+      "nombre": "NOVA CUELLAR",
+      "apellido": "JHOJAN",
+      "direccion": "AV. VILLA 1ro DE MAYO",
+      "telefono": "69145892"
+    },
+    {
+      "nombre": "NUÑEZ PERALTA",
+      "apellido": "ANGELES CECILIA",
+      "direccion": "B. HAMACAS",
+      "telefono": "75654312"
+    },
+    {
+      "nombre": "QUIROGA AMPUERO",
+      "apellido": "LUCAS CLAUDIO",
+      "direccion": "AV. GRAL. LOPEZ",
+      "telefono": "75378840"
+    },
+    {
+      "nombre": "QUISPE OYARDO",
+      "apellido": "JULIETA",
+      "direccion": "RETIRADA",
+      "telefono": null
+    },
+    {
+      "nombre": "RAMIREZ VELA",
+      "apellido": "YESSICA",
+      "direccion": "B. CUPESI Nª 285",
+      "telefono": "79848789"
+    },
+    {
+      "nombre": "ROCHA NUÑEZ",
+      "apellido": "ERBIN",
+      "direccion": "Z. METROPOLITANO",
+      "telefono": "7982300"
+    },
+    {
+      "nombre": "ROMERO CHINCHILLA",
+      "apellido": "DAVID DANIEL",
+      "direccion": "Z. BERMUDEZ AV/C. JUAN ROCHA",
+      "telefono": "69226893"
+    },
+    {
+      "nombre": "SALAS VEDIA",
+      "apellido": "NELLY",
+      "direccion": "B. LA FUENTE",
+      "telefono": "75378840"
+    },
+    {
+      "nombre": "SALVATIERRA CASTILLO",
+      "apellido": "FABRICIO",
+      "direccion": "UV 175 B VILLA NUEVA",
+      "telefono": "75647563"
+    },
+    {
+      "nombre": "TAPIA GUZMAN",
+      "apellido": "RODRIGO",
+      "direccion": "AV. OVIDIO BARBERY",
+      "telefono": "69226893"
+    },
+    {
+      "nombre": "VARGAS VILLCA",
+      "apellido": "LEYDI",
+      "direccion": "Z. NORTE C/5 NRO 4567",
+      "telefono": "75646193"
+    },
+    {
+      "nombre": "VIA BENAVIDES",
+      "apellido": "YOHAN CARLY",
+      "direccion": "B. 4 DE NOVIEMBRE",
+      "telefono": "70487367"
+    },
+    {
+      "nombre": "VILLARROEL VELASQUEZ",
+      "apellido": "ANDREA",
+      "direccion": "AV. VILLA 1ro DE MAYO",
+      "telefono": "69145892"
+    }
+  ],
+  "notas": [
+    {
+      "alumno_nombre": "AGUILAR ROMERO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 40.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "AMADOR CASTEDO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 65.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "ARGANI QUISPE",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 70.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "CAIHUARA GONZALES",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 63.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "CHILO MOLINA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 70.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "CHOQUE MASAI",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 80.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "CHOQUE MITHA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 69.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "COIMBRA VACA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 66.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "CORONADO CORONADO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 62.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "DURAN VACA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 81.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "ESCALANTE AGUILERA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 53.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "ESPINOZA VIRACOCHA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 61.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "FERNANDEZ MUÑOZ",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 57.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "FLORES ALEGRE",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 71.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "FLORES DORADO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 48.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "FUENTES CALERO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 80.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "HEREDIA SANTOS",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 70.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "JUSTINIANO MOLINA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 72.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "LABARDEN SEGUNDO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 57.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "LAIME MAMANI",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 58.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "MOLINA GRANDE",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 90.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "MONTAÑO CLAURE",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 56.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "NAVIA MARQUEZ",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 89.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "NOVA CUELLAR",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 77.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "NUÑEZ PERALTA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 62.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "QUIROGA AMPUERO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 52.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "QUISPE OYARDO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 0.00,
+      "asistencia": "Ausente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "RAMIREZ VELA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 56.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "ROCHA NUÑEZ",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 72.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "ROMERO CHINCHILLA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 74.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "SALAS VEDIA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 70.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "SALVATIERRA CASTILLO",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 68.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "TAPIA GUZMAN",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 38.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "VARGAS VILLCA",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 70.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "VIA BENAVIDES",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 75.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    },
+    {
+      "alumno_nombre": "VILLARROEL VELASQUEZ",
+      "materia_nombre": "Artes Gráficas",
+      "tipo_evaluacion": "CALIFICACIÓN TRIMESTRAL",
+      "nota": 57.00,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-03-31"
+    }
+  ]
+}
