@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2025 a las 21:39:21
+-- Tiempo de generación: 14-09-2025 a las 02:04:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,98 +18,112 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `colegio`
+-- Base de datos: `school_attendance_ai`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumnos`
+-- Estructura de tabla para la tabla `colegio_curso`
 --
 
-CREATE TABLE `alumnos` (
-  `id_alumno` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `direccion` varchar(200) DEFAULT NULL,
-  `telefono` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cursos`
---
-
-CREATE TABLE `cursos` (
-  `id_curso` int(11) NOT NULL,
+CREATE TABLE `colegio_curso` (
+  `id` int(11) NOT NULL,
   `nombre_curso` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `especialidades`
+-- Estructura de tabla para la tabla `colegio_materia`
 --
 
-CREATE TABLE `especialidades` (
-  `id_especialidad` int(11) NOT NULL,
+CREATE TABLE `colegio_materia` (
+  `id` int(11) NOT NULL,
+  `nombre_materia` varchar(100) NOT NULL,
+  `id_curso_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_asistencia`
+--
+
+CREATE TABLE `evaluacion_asistencia` (
+  `id` int(11) NOT NULL,
+  `fecha_clase` date NOT NULL,
+  `estado` varchar(1) NOT NULL,
+  `id_alumno_id` int(11) NOT NULL,
+  `id_materia_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_nota`
+--
+
+CREATE TABLE `evaluacion_nota` (
+  `id` int(11) NOT NULL,
+  `ser` decimal(5,2) DEFAULT NULL,
+  `saber` decimal(5,2) DEFAULT NULL,
+  `hacer` decimal(5,2) DEFAULT NULL,
+  `decidir` decimal(5,2) DEFAULT NULL,
+  `calificacion_trimestral` decimal(5,2) DEFAULT NULL,
+  `observaciones` text DEFAULT NULL,
+  `id_alumno_id` int(11) NOT NULL,
+  `id_materia_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_profesormateriacurso`
+--
+
+CREATE TABLE `evaluacion_profesormateriacurso` (
+  `id` int(11) NOT NULL,
+  `id_profesor_id` int(11) NOT NULL,
+  `id_materia_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personal_alumno`
+--
+
+CREATE TABLE `personal_alumno` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `telefono` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personal_especialidad`
+--
+
+CREATE TABLE `personal_especialidad` (
+  `id` int(11) NOT NULL,
   `nombre_especialidad` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materias`
+-- Estructura de tabla para la tabla `personal_profesor`
 --
 
-CREATE TABLE `materias` (
-  `id_materia` int(11) NOT NULL,
-  `nombre_materia` varchar(100) NOT NULL,
-  `id_curso` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `notas`
---
-
-CREATE TABLE `notas` (
-  `id_nota` int(11) NOT NULL,
-  `id_alumno` int(11) NOT NULL,
-  `id_materia` int(11) NOT NULL,
-  `tipo_evaluacion` enum('Examen','Quiz','Tarea','Proyecto','Participacion','Asistencia') DEFAULT NULL,
-  `evaluacion` varchar(100) DEFAULT NULL,
-  `nota` decimal(5,2) DEFAULT NULL,
-  `asistencia` enum('Presente','Ausente','Tardanza','Justificado') DEFAULT NULL,
-  `fecha_evaluacion` date NOT NULL,
-  `observaciones` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `profesores`
---
-
-CREATE TABLE `profesores` (
-  `id_profesor` int(11) NOT NULL,
+CREATE TABLE `personal_profesor` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
-  `id_especialidad` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `profesor_materia_curso`
---
-
-CREATE TABLE `profesor_materia_curso` (
-  `id_pmc` int(11) NOT NULL,
-  `id_profesor` int(11) NOT NULL,
-  `id_materia` int(11) NOT NULL
+  `id_especialidad_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -117,128 +131,151 @@ CREATE TABLE `profesor_materia_curso` (
 --
 
 --
--- Indices de la tabla `alumnos`
+-- Indices de la tabla `colegio_curso`
 --
-ALTER TABLE `alumnos`
-  ADD PRIMARY KEY (`id_alumno`);
+ALTER TABLE `colegio_curso`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nombre_curso` (`nombre_curso`);
 
 --
--- Indices de la tabla `cursos`
+-- Indices de la tabla `colegio_materia`
 --
-ALTER TABLE `cursos`
-  ADD PRIMARY KEY (`id_curso`);
+ALTER TABLE `colegio_materia`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_curso_id` (`id_curso_id`);
 
 --
--- Indices de la tabla `especialidades`
+-- Indices de la tabla `evaluacion_asistencia`
 --
-ALTER TABLE `especialidades`
-  ADD PRIMARY KEY (`id_especialidad`);
+ALTER TABLE `evaluacion_asistencia`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `evaluacion_asistencia_id_alumno_id_id_materia_id_818a7c2e_uniq` (`id_alumno_id`,`id_materia_id`,`fecha_clase`),
+  ADD KEY `id_materia_id` (`id_materia_id`);
 
 --
--- Indices de la tabla `materias`
+-- Indices de la tabla `evaluacion_nota`
 --
-ALTER TABLE `materias`
-  ADD PRIMARY KEY (`id_materia`),
-  ADD KEY `id_curso` (`id_curso`);
+ALTER TABLE `evaluacion_nota`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `evaluacion_nota_id_alumno_id_id_materia_id_a824e6c3_uniq` (`id_alumno_id`,`id_materia_id`),
+  ADD KEY `id_materia_id` (`id_materia_id`);
 
 --
--- Indices de la tabla `notas`
+-- Indices de la tabla `evaluacion_profesormateriacurso`
 --
-ALTER TABLE `notas`
-  ADD PRIMARY KEY (`id_nota`),
-  ADD KEY `id_alumno` (`id_alumno`),
-  ADD KEY `id_materia` (`id_materia`);
+ALTER TABLE `evaluacion_profesormateriacurso`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_profesor_id` (`id_profesor_id`),
+  ADD KEY `id_materia_id` (`id_materia_id`);
 
 --
--- Indices de la tabla `profesores`
+-- Indices de la tabla `personal_alumno`
 --
-ALTER TABLE `profesores`
-  ADD PRIMARY KEY (`id_profesor`),
-  ADD KEY `id_especialidad` (`id_especialidad`);
+ALTER TABLE `personal_alumno`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `profesor_materia_curso`
+-- Indices de la tabla `personal_especialidad`
 --
-ALTER TABLE `profesor_materia_curso`
-  ADD PRIMARY KEY (`id_pmc`),
-  ADD KEY `id_profesor` (`id_profesor`),
-  ADD KEY `id_materia` (`id_materia`);
+ALTER TABLE `personal_especialidad`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nombre_especialidad` (`nombre_especialidad`);
+
+--
+-- Indices de la tabla `personal_profesor`
+--
+ALTER TABLE `personal_profesor`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_especialidad_id` (`id_especialidad_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `alumnos`
+-- AUTO_INCREMENT de la tabla `colegio_curso`
 --
-ALTER TABLE `alumnos`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `colegio_curso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `cursos`
+-- AUTO_INCREMENT de la tabla `colegio_materia`
 --
-ALTER TABLE `cursos`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `colegio_materia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `especialidades`
+-- AUTO_INCREMENT de la tabla `evaluacion_asistencia`
 --
-ALTER TABLE `especialidades`
-  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `evaluacion_asistencia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `materias`
+-- AUTO_INCREMENT de la tabla `evaluacion_nota`
 --
-ALTER TABLE `materias`
-  MODIFY `id_materia` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `evaluacion_nota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `notas`
+-- AUTO_INCREMENT de la tabla `evaluacion_profesormateriacurso`
 --
-ALTER TABLE `notas`
-  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `evaluacion_profesormateriacurso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `profesores`
+-- AUTO_INCREMENT de la tabla `personal_alumno`
 --
-ALTER TABLE `profesores`
-  MODIFY `id_profesor` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `personal_alumno`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `profesor_materia_curso`
+-- AUTO_INCREMENT de la tabla `personal_especialidad`
 --
-ALTER TABLE `profesor_materia_curso`
-  MODIFY `id_pmc` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `personal_especialidad`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `personal_profesor`
+--
+ALTER TABLE `personal_profesor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `materias`
+-- Filtros para la tabla `colegio_materia`
 --
-ALTER TABLE `materias`
-  ADD CONSTRAINT `materias_ibfk_1` FOREIGN KEY (`id_curso`) REFERENCES `cursos` (`id_curso`);
+ALTER TABLE `colegio_materia`
+  ADD CONSTRAINT `colegio_materia_ibfk_1` FOREIGN KEY (`id_curso_id`) REFERENCES `colegio_curso` (`id`);
 
 --
--- Filtros para la tabla `notas`
+-- Filtros para la tabla `evaluacion_asistencia`
 --
-ALTER TABLE `notas`
-  ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`),
-  ADD CONSTRAINT `notas_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`);
+ALTER TABLE `evaluacion_asistencia`
+  ADD CONSTRAINT `evaluacion_asistencia_ibfk_1` FOREIGN KEY (`id_alumno_id`) REFERENCES `personal_alumno` (`id`),
+  ADD CONSTRAINT `evaluacion_asistencia_ibfk_2` FOREIGN KEY (`id_materia_id`) REFERENCES `colegio_materia` (`id`);
 
 --
--- Filtros para la tabla `profesores`
+-- Filtros para la tabla `evaluacion_nota`
 --
-ALTER TABLE `profesores`
-  ADD CONSTRAINT `profesores_ibfk_1` FOREIGN KEY (`id_especialidad`) REFERENCES `especialidades` (`id_especialidad`);
+ALTER TABLE `evaluacion_nota`
+  ADD CONSTRAINT `evaluacion_nota_ibfk_1` FOREIGN KEY (`id_alumno_id`) REFERENCES `personal_alumno` (`id`),
+  ADD CONSTRAINT `evaluacion_nota_ibfk_2` FOREIGN KEY (`id_materia_id`) REFERENCES `colegio_materia` (`id`);
 
 --
--- Filtros para la tabla `profesor_materia_curso`
+-- Filtros para la tabla `evaluacion_profesormateriacurso`
 --
-ALTER TABLE `profesor_materia_curso`
-  ADD CONSTRAINT `profesor_materia_curso_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
-  ADD CONSTRAINT `profesor_materia_curso_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`);
+ALTER TABLE `evaluacion_profesormateriacurso`
+  ADD CONSTRAINT `evaluacion_profesormateriacurso_ibfk_1` FOREIGN KEY (`id_profesor_id`) REFERENCES `personal_profesor` (`id`),
+  ADD CONSTRAINT `evaluacion_profesormateriacurso_ibfk_2` FOREIGN KEY (`id_materia_id`) REFERENCES `colegio_materia` (`id`);
+
+--
+-- Filtros para la tabla `personal_profesor`
+--
+ALTER TABLE `personal_profesor`
+  ADD CONSTRAINT `personal_profesor_ibfk_1` FOREIGN KEY (`id_especialidad_id`) REFERENCES `personal_especialidad` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
