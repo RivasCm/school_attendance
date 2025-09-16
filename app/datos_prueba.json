@@ -1,0 +1,57 @@
+[
+  {
+    "model": "colegio.especialidad",
+    "pk": 1,
+    "fields": {
+      "nombre_especialidad": "Informática"
+    }
+  },
+  {
+    "model": "colegio.curso",
+    "pk": 1,
+    "fields": {
+      "nombre_curso": "2do de Secundaria"
+    }
+  },
+  {
+    "model": "colegio.materia",
+    "pk": 1,
+    "fields": {
+      "nombre_materia": "Matemáticas",
+      "id_curso": 1
+    }
+  },
+  {
+    "model": "personal.profesor",
+    "pk": 1,
+    "fields": {
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "id_especialidad": 1
+    }
+  },
+  {
+    "model": "personal.alumno",
+    "pk": 1,
+    "fields": {
+      "nombre": "Maria",
+      "apellido": "Garcia",
+      "direccion": "Calle Falsa 123",
+      "telefono": "12345678"
+    }
+  },
+  {
+    "model": "evaluacion.nota",
+    "pk": 1,
+    "fields": {
+      "id_alumno": 1,
+      "id_materia": 1,
+      "tipo_evaluacion": "Examen",
+      "evaluacion": "Examen final",
+      "nota": 95.50,
+      "asistencia": "Presente",
+      "fecha_evaluacion": "2025-09-13",
+      "observaciones": ""
+    }
+  }
+]

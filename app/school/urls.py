@@ -1,0 +1,13 @@
+# colegio/urls.py
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import EspecialidadViewSet, CursoViewSet, MateriaViewSet
+
+router = DefaultRouter()
+router.register(r'especialidades', EspecialidadViewSet)
+router.register(r'cursos', CursoViewSet)
+router.register(r'materias', MateriaViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
